@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package authproto;
+
+option go_package = "github.com/username/project/authProto";
+
+service Auth {
+  rpc Register (RegisterRequest) returns (RegisterResponse);
+  rpc Login (LoginRequest) returns (LoginResponse);
+}
+
+message RegisterRequest {
+  string mail = 1;
+  string password = 2;
+}
+
+message RegisterResponse {
+  int64 user_id = 1;  
+}
+
+message LoginRequest {
+  string mail = 1;
+  string password = 2;
+}
+
+message LoginResponse {
+  string token = 1;
+}
