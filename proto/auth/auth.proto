@@ -7,6 +7,8 @@ option go_package = "github.com/username/project/authProto";
 service Auth {
   rpc Register (RegisterRequest) returns (RegisterResponse);
   rpc Login (LoginRequest) returns (LoginResponse);
+  rpc IsAdmin (IsAdminRequest) returns (IsAdminResponse);
+  rpc Logout (LogoutRequest) returns (LogoutResponse);
 }
 
 message RegisterRequest {
@@ -25,4 +27,12 @@ message LoginRequest {
 
 message LoginResponse {
   string token = 1;
+}
+
+message IsAdminRequest {
+  int64 user_id = 1; // User ID to validate.
+}
+
+message IsAdminResponse {
+  bool is_admin = 1;  // Indicates whether the user is an admin.
 }
