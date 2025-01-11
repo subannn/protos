@@ -30,9 +30,18 @@ message LoginResponse {
 }
 
 message IsAdminRequest {
-  int64 user_id = 1; // User ID to validate.
+  int64 user_id = 1; 
 }
 
 message IsAdminResponse {
-  bool is_admin = 1;  // Indicates whether the user is an admin.
+  bool is_admin = 1; 
 }
+
+message LogoutRequest {
+  int64 user_id = 1;
+}
+
+message LogoutResponse {
+  int64 user_id = 1;
+}
+
